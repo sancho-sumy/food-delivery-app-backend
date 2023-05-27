@@ -7,6 +7,7 @@ import ordersRoutes from './routes/orders.routes';
 
 import logger from './utils/logger.utils';
 import connect from './utils/connect.utils';
+import cors from 'cors';
 
 interface Error {
     statusCode: number;
@@ -21,6 +22,20 @@ const app = express();
 app.use(cookieParser());
 
 app.use(express.json());
+
+app.use((req: Request, res: Response, next: NextFunction) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
+
+app.use(
+    cors({
+        origin: config.get('server.origin'),
+        credentials: true,
+    }),
+);
 
 app.listen(port, async () => {
     logger.info(`App listening on http://localhost:${port}`);

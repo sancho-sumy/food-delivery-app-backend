@@ -4,7 +4,7 @@ dotenv.config();
 
 const SERVER_PORT = process.env.SERVER_PORT || 7070;
 
-const origin = 'http://localhost:3000';
+const origin = true;
 
 const MONGO_DB_URI = process.env.MONGO_DB_URI;
 

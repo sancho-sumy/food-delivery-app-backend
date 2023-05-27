@@ -6,7 +6,7 @@ import { createOrder } from '../services/order.service';
 export async function getOrdersHandler(req: Request, res: Response, next: NextFunction) {
     try {
         const order = await OrderModel.find();
-        res.status(200).json({ message: 'Fetched order successfully.', order: order });
+        res.status(200).json({ message: 'Fetched order successfully.', result: order });
     } catch (error: any) {
         if (!error.statusCode) {
             error.statusCode = 500;

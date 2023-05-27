@@ -4,7 +4,7 @@ import ShopModel, { ShopInput } from '../models/shop.model';
 export async function createShop(input: ShopInput) {
     try {
         const shop = await ShopModel.create(input);
-        return omit(shop.toJSON(), 'shop');
+        return omit(shop.toJSON(), 'result');
     } catch (error: any) {
         throw new Error(error);
     }

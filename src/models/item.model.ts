@@ -5,7 +5,7 @@ export interface ItemInput {
     name: string;
     price: number;
     imageURL: string;
-    shop: ShopDocument['_id'];
+    shopId: ShopDocument['_id'];
 }
 
 export interface ItemDocument extends ItemInput, Document {
@@ -27,7 +27,7 @@ const itemSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        shop: { type: mongoose.Schema.Types.ObjectId, ref: 'Shop', required: true },
+        shopId: { type: mongoose.Schema.Types.ObjectId, ref: 'Shop', required: true },
     },
     { timestamps: true },
 );

@@ -43,7 +43,7 @@ const orderSchema = new mongoose.Schema(
         },
         items: [
             {
-                item: { type: mongoose.Schema.Types.ObjectId, ref: 'Item', required: true },
+                itemId: { type: mongoose.Schema.Types.ObjectId, ref: 'Item', required: true },
                 price: {
                     type: Number,
                     required: true,

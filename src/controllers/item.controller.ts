@@ -6,7 +6,7 @@ import { createItem } from '../services/item.service';
 export async function getItemsHandler(req: Request, res: Response, next: NextFunction) {
     try {
         const items = await ItemModel.find();
-        res.status(200).json({ message: 'Fetched items successfully.', items: items });
+        res.status(200).json({ message: 'Fetched items successfully.', result: items });
     } catch (error: any) {
         if (!error.statusCode) {
             error.statusCode = 500;

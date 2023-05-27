@@ -6,7 +6,7 @@ import ShopModel from '../models/shop.model';
 export async function getShopsHandler(req: Request, res: Response, next: NextFunction) {
     try {
         const shops = await ShopModel.find();
-        res.status(200).json({ message: 'Fetched shops successfully.', shops: shops });
+        res.status(200).json({ message: 'Fetched shops successfully.', result: shops });
     } catch (error: any) {
         if (!error.statusCode) {
             error.statusCode = 500;

@@ -4,7 +4,7 @@ import ItemModel, { ItemInput } from '../models/item.model';
 export async function createItem(input: ItemInput) {
     try {
         const item = await ItemModel.create(input);
-        return omit(item.toJSON(), 'item');
+        return omit(item.toJSON(), 'result');
     } catch (error: any) {
         throw new Error(error);
     }
