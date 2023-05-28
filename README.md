@@ -1,1 +1,11 @@
-food-delivery-app-backend
+## Нажаль, навіть після безсонної ночі, мені так і не вдалося задеплоїти бекенд ні через Vercel, ні через інші платформи.
+
+### Для того щоб запустити back-end локально:
+
+- клонуйте репозиторій
+- npm install
+- npm start
+
+Доступ за посиланням: http://127.0.0.1:4173/
+
+Front-end знаходиться тут: https://github.com/sancho-sumy/food-delivery-app-frontend
